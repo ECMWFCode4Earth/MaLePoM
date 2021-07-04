@@ -1,2 +1,2 @@
 # MaLePoM
-Machine Learning for Pollution Monitoring
+**Ma**chine **Le**arning for **Po**llution **M**onitoring
