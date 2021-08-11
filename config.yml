@@ -1,0 +1,14 @@
+region:
+    xmin: 4
+    ymin: 43
+    xmax: 12
+    ymax: 51
+
+period:
+    start: 2019-05-01T00:00:00
+    end: 2019-05-31T23:59:59
+    freq: 1H
+    
+grid:
+    resolution: 0.25
+    unit: degrees

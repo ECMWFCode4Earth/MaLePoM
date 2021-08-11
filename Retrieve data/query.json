@@ -1,0 +1,52 @@
+{
+  "datasetId": "EO:ECMWF:DAT:CAMS_GLOBAL_REANALYSIS_EAC4",
+  "boundingBoxValues": [
+    {
+      "name": "area",
+      "bbox": [
+        4,
+        43,
+        12,
+        51
+      ]
+    }
+  ],
+  "dateRangeSelectValues": [
+    {
+      "name": "date",
+      "start": "2019-05-01T00:00:00.000Z",
+      "end": "2019-05-31T00:00:00.000Z"
+    }
+  ],
+  "multiStringSelectValues": [
+    {
+      "name": "variable",
+      "value": [
+        "total_column_carbon_monoxide",
+        "total_column_nitrogen_dioxide",
+        "total_column_nitrogen_monoxide",
+        "total_column_ozone",
+        "total_column_water_vapour"
+      ]
+    },
+    {
+      "name": "time",
+      "value": [
+        "00:00",
+        "03:00",
+        "06:00",
+        "09:00",
+        "12:00",
+        "15:00",
+        "18:00",
+        "21:00"
+      ]
+    }
+  ],
+  "stringChoiceValues": [
+    {
+      "name": "format",
+      "value": "netcdf"
+    }
+  ]
+}
