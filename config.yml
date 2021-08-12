@@ -1,8 +1,8 @@
 region:
-    xmin: 4
-    ymin: 43
-    xmax: 12
-    ymax: 51
+    xmin: 43
+    ymin: 4
+    xmax: 51
+    ymax: 12
 
 period:
     start: 2019-05-01T00:00:00

@@ -1,7 +1,7 @@
 import xarray as xr
 import numpy as np
 import pandas as pd
-import rioxarray as rx
+# import rioxarray as rx
 import yaml
 
 
@@ -37,7 +37,7 @@ def clip(da):
     if da.lat.values[1] < da.lat.values[0]:
         da = da.sortby('lat', ascending=True)
         
-    da = da.sel(lat=slice(ymin, ymax), lon=slice(xmin, xmax))
+#     da = da.sel(lat=slice(ymin, ymax), lon=slice(xmin, xmax))
     
     print('Clipped data.')
     return da
@@ -55,7 +55,7 @@ def regrid(da):
     
     grid = canonical_grid()
    
-    da = clip(da)
+    da = clip(rename_dims(da))
 
     if abs(da.lon.values[0] - da.lon.values[1]) == resolution:
         a, b = align(da, grid, join='right')
