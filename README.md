@@ -1,7 +1,7 @@
-malepom
+MaLePoM
 ==============================
 
-MaLePoM (Machine Learning for Pollution Monitoring) is part of ECMWF's European Summer of Weather Code 2021 event.
+MaLePoM (Machine Learning for Pollution Monitoring) is part of ECMWF's European Summer of Weather Code 2021 event. Through this project we aim to improve the spatial and temporal accuracy of emissions estimates for NOx by constructing a machine learning model using suitable proxy data. 
 
 Project Organization
 ------------
@@ -54,4 +54,27 @@ Project Organization
 
 --------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+
+
+### Using this code:
+
+#### 1. Clone repository
+Run `git clone https://github.com/esowc/MaLePoM.git`
+
+#### 2. Create local `api_keys.yml` to store private API keys
+API keys are used to access various datasets, and their keys are stored in a private yaml file as described below. Copy-paste the below into a new text file, add the API keys, and rename the file to `api_keys.yaml`.
+
+    HERE:
+        key: #######
+
+    COPERNICUS:
+        uri: #####
+        key: ############
+
+    WEKEO:
+        username: #########
+        password: #########
+
+    FTP_SERVER:
+        username: #########
+        password: #########
