@@ -14,7 +14,7 @@ import numpy as np
 
 
 class CustomDataset:
-	
+  
   def __init__(self, filename):
     self.filename = filename
     self.decompress()
@@ -43,10 +43,22 @@ class CustomDataset:
   def open_dataset(self):
     print("Opening dataset at : ", self.filename)
     self.dataset = xr.open_dataset(self.filename)
+    if ('lat' in self.dataset.variables) and ('lon' in self.dataset.variables):
+      self.dataset = self.dataset.rename({'lat':'latitude', 'lon':'longitude'})
     print("Done!")
 
-  def rescale(self, target_res = 0.25, method = 'nearest'):
+  def cut_region (self, lat_n, lat_s, lon_e, lon_w, res = 0.25):
+    new_lat_values = np.arange(lat_s, lat_n + res, res)
+    new_long_values = np.arange(lon_e, lon_w + res, res)
+    self.dataset = self.dataset.interp(latitude = new_lat_values, longitude = new_long_values, method = 'linear')
+    '''self.dataset = self.dataset.where(self.dataset.latitude <= lat_n, drop = True)
+    self.dataset = self.dataset.where(self.dataset.latitude >= lat_s, drop = True)
+    self.dataset = self.dataset.where(self.dataset.longitude >= lon_e, drop = True)
+    self.dataset = self.dataset.where(self.dataset.longitude <= lon_w, drop = True)'''
 
+  
+  def rescale(self, target_res = 0.25, method = 'nearest'): 
+    
     assert ('latitude' in self.dataset.variables),"latitude column missing (name must be 'latitude')"
     assert ('longitude' in self.dataset.variables),"longitude column missing (name must be 'longitude')"
 
@@ -76,9 +88,16 @@ class CustomDataset:
     #da = da.sortby(['latitude','longitude','time'])
     #df_temp = data.interp(latitude = new_lat_values, longitude = new_long_values, method = method)
     #df= df_temp.interp(longitude = new_long_values, method = method)
+    self.dataset = self.dataset.interp(latitude = new_lat_values, longitude = new_long_values, method = method)
 
-    return self.dataset.interp(latitude = new_lat_values, longitude = new_long_values, method = method)
 
   def get_dataset(self):
     return self.dataset
+  
+  def rename_var(self, new_dict):
+    self.dataset = self.dataset.rename(new_dict)
+
+  def resample(self, t):
+    self.dataset = self.dataset.resample(time=t).interpolate("linear")
+
 
