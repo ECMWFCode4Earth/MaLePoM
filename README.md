@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 MaLePoM
 ==============================
 
@@ -79,7 +78,3 @@ API keys are used to access various datasets, and their keys are stored in a pri
     FTP_SERVER:
         username: #########
         password: #########
-=======
-# MaLePoM
-**Ma**chine **Le**arning for **Po**llution **M**onitoring
->>>>>>> main
