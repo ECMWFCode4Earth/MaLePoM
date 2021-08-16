@@ -14,7 +14,11 @@ import numpy as np
 
 
 class CustomDataset:
+<<<<<<< HEAD
     
+=======
+  
+>>>>>>> main
   def __init__(self, filename):
     self.filename = filename
     self.decompress()
