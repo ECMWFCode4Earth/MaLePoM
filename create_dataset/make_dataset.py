@@ -101,5 +101,5 @@ class CustomDataset:
     self.dataset = self.dataset.sortby('time', ascending=True)
     self.dataset = self.dataset.sortby('latitude', ascending=True)
     self.dataset = self.dataset.sortby('longitude', ascending=True)
-
+    self.dataset = self.dataset.resample(time=t).interpolate("linear")
 
