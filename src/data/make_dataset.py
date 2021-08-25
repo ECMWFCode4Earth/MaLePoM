@@ -14,11 +14,7 @@ import numpy as np
 
 
 class CustomDataset:
-<<<<<<< HEAD
     
-=======
-  
->>>>>>> main
   def __init__(self, filename):
     self.filename = filename
     self.decompress()
@@ -102,6 +98,8 @@ class CustomDataset:
     self.dataset = self.dataset.rename(new_dict)
 
   def resample(self, t):
+    self.dataset = self.dataset.sortby('time', ascending=True)
+    self.dataset = self.dataset.sortby('latitude', ascending=True)
+    self.dataset = self.dataset.sortby('longitude', ascending=True)
     self.dataset = self.dataset.resample(time=t).interpolate("linear")
-
 
