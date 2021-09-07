@@ -1,5 +1,5 @@
 MaLePoM
-==============================
+================
 
 MaLePoM (Machine Learning for Pollution Monitoring) is part of ECMWF's European Summer of Weather Code 2021 event. Through this project we aim to improve the spatial and temporal accuracy of emissions estimates for NOx by constructing a machine learning model using suitable proxy data. 
 
@@ -52,11 +52,19 @@ Project Organization
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
 
+Background
 --------
+#### Datasets used
+|           Dataset          |                  Source                 | Spatial resolution | Temporal resolution | Notes                                                                                                             |
+|:--------------------------:|:---------------------------------------:|:------------------:|:-------------------:|-------------------------------------------------------------------------------------------------------------------|
+| Land-use/land cover (LULC) | Copernicus Land Monitoring Service 2018 |        100m        |         n/a         |                                                                                                                   |
+| Real-time traffic data     | HERE Traffic API                        |         n/a        |         n/a         | Traffic data is available in real-time via the API. Data is gathered and stored using the API at several times.   |
+| Meteorological variables   | ERA5 reanalysis                         |    0.25 degrees    |        1 hour       | Temperature, wind speed, precipitation, humidity, and cloud cover are obtained from the ERA5 reanalysis dataset   |
+| Atmospheric concentrations | CAMS global reanalysis                  |        ~80km       |       3 hours       | Surface concentrations of NO, NO2, CO, CO2, CH4, and O3 are obtained from the CAMS Global Reanalysis product      |                                                                                                |
 
 
-
-### Using this code:
+Using this code
+--------
 
 #### 1. Clone repository
 Run `git clone https://github.com/esowc/MaLePoM.git`
