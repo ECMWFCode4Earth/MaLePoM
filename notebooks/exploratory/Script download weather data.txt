@@ -1,0 +1,91 @@
+dataset_id = "EO:ECMWF:DAT:CAMS_GLOBAL_REANALYSIS_EAC4"
+
+data = {
+  "datasetId": "EO:ECMWF:DAT:CAMS_GLOBAL_REANALYSIS_EAC4",
+  "boundingBoxValues": [
+    {
+      "name": "area",
+      "bbox": [
+        4,
+        43,
+        12+1,
+        51+1
+      ]
+    }
+  ],
+  "dateRangeSelectValues": [
+    {
+      "name": "date",
+     
+      # #05_2019
+      # "start": "2019-05-01T00:00:00.000Z",
+      # "end": "2019-05-31T00:00:00.000Z"
+     
+      # #07_2019
+      # "start": "2019-07-01T00:00:00.000Z",
+      # "end": "2019-07-31T00:00:00.000Z"
+     
+      # #05_2020
+      # "start": "2020-05-01T00:00:00.000Z",
+      # "end": "2020-05-31T00:00:00.000Z"
+     
+    }
+  ],
+  "multiStringSelectValues": [
+    {
+      "name": "variable",
+      "value": [
+                
+        # #Wind_vegetation_pressure_cloud dataset
+        # "10m_u_component_of_wind",
+        # "10m_v_component_of_wind",
+        # "high_cloud_cover",
+        # "low_cloud_cover",
+        # "total_cloud_cover",
+        # "low_vegetation_cover",
+        # "high_vegetation_cover",
+        # "surface_pressure"
+
+        # #Spechum_temp and Relhum datasets
+        # "temperature",
+        # "specific_humidity", 
+        # "relative_humidity"
+
+        # #Water datasets
+        # "total_column_water",
+        # "total_column_water_vapour"
+        ]
+    },
+    {
+      "name": "pressure_level",
+      "value": [
+        "1"
+      ]
+    },
+    {
+      "name": "model_level",
+      "value": [
+        "60"
+      ]
+    },
+    {
+      "name": "time",
+      "value": [
+        "00:00",
+        "12:00",
+        "18:00",
+        "03:00",
+        "15:00",
+        "06:00",
+        "21:00",
+        "09:00"
+      ]
+    }
+  ],
+  "stringChoiceValues": [
+    {
+      "name": "format",
+      "value": "netcdf"
+    }
+  ]
+}
